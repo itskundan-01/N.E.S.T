@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.E.S.T - Non-Electrical Solar Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to N.E.S.T</h1>
+        <p>Non-Electrical Solar Tracker</p>
+    </header>
+    <nav>
+        <a href="#importance">Importance</a>
+        <a href="#features">Features</a>
+        <a href="#installation">Installation</a>
+        <a href="#impact">Impact</a>
+    </nav>
+    <div class="container">
+        <section id="importance">
+            <h2>Why Non-Electrical Solar Tracking is Important</h2>
+            <div class="card">
+                <h3>Maximizing Solar Panel Efficiency</h3>
+                <p>Solar tracking systems can boost energy efficiency by 30%–40% compared to stationary panels. Non-electrical systems achieve this without consuming energy.</p>
+            </div>
+            <div class="card">
+                <h3>Comparison: Electrical vs. Non-Electrical Tracking</h3>
+                <p><strong>Electrical Tracking:</strong> Uses motors and sensors, consumes energy, and requires more maintenance.</p>
+                <p><strong>Non-Electrical Tracking:</strong> Uses mechanical systems, energy-independent, and highly reliable.</p>
+            </div>
+        </section>
+        <section id="features">
+            <h2>Why Our Solution Stands Out</h2>
+            <div class="card">
+                <h3>Cost-Effectiveness</h3>
+                <p>Our design eliminates the need for motors and electronic controllers, making it affordable and easy to maintain.</p>
+            </div>
+            <div class="card">
+                <h3>Eco-Friendly Design</h3>
+                <p>Fully mechanical, our system has zero energy consumption and uses recyclable materials.</p>
+            </div>
+        </section>
+        <section id="installation">
+            <h2>Installation</h2>
+            <p>Choose one of the options below to get your location's coordinates for installation:</p>
+            <button class="btn" id="gpsBtn">Use GPS Location</button>
+            <button class="btn" id="manualBtn">Enter Coordinates Manually</button>
+            <div id="coordinateInput" style="display:none; margin-top:1rem;">
+                <label for="country">Country:</label>
+                <input type="text" id="country" placeholder="Enter your country"><br><br>
+                <label for="state">State:</label>
+                <input type="text" id="state" placeholder="Enter your state"><br><br>
+                <label for="district">District:</label>
+                <input type="text" id="district" placeholder="Enter your district"><br><br>
+                <button class="btn" id="calculateBtn">Calculate Position</button>
+            </div>
+        </section>
+        <section id="impact">
+            <h2>Impact and Benefits</h2>
+            <div class="card">
+                <h3>Economic</h3>
+                <p>Enhances energy efficiency while reducing costs, making it ideal for low-income households.</p>
+            </div>
+            <div class="card">
+                <h3>Environmental</h3>
+                <p>Supports renewable energy adoption and reduces dependency on fossil fuels.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 N.E.S.T. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
