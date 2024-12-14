@@ -1,7 +1,13 @@
 document.getElementById('gpsBtn').addEventListener('click', () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
-            alert(`Your coordinates are: Latitude ${position.coords.latitude}, Longitude ${position.coords.longitude}`);
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            document.getElementById('latitude').value = latitude;
+            document.getElementById('longitude').value = longitude;
+
+            alert(`Coordinates set: Latitude ${latitude}, Longitude ${longitude}`);
         }, error => {
             alert('Unable to retrieve your location. Please try again.');
         });
@@ -10,18 +16,26 @@ document.getElementById('gpsBtn').addEventListener('click', () => {
     }
 });
 
-document.getElementById('manualBtn').addEventListener('click', () => {
-    document.getElementById('coordinateInput').style.display = 'block';
-});
+document.getElementById('userDetailsForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-document.getElementById('calculateBtn').addEventListener('click', () => {
-    const country = document.getElementById('country').value;
-    const state = document.getElementById('state').value;
-    const district = document.getElementById('district').value;
+    const data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        latitude: document.getElementById('latitude').value,
+        longitude: document.getElementById('longitude').value
+    };
 
-    if (country && state && district) {
-        alert(`Position calculation for: ${country}, ${state}, ${district}.`);
+    const response = await fetch('/save-location', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+        alert('Data saved successfully!');
     } else {
-        alert('Please fill out all fields.');
+        alert('Failed to save data. Please try again.');
     }
 });

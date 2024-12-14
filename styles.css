@@ -1,10 +1,3 @@
-#head{
-    text-align: center;
-}
-body{
-    background-color: rgb(95, 228, 243);
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -90,4 +83,3 @@ footer {
 .btn:hover {
     background-color: #003f80;
 }
-

@@ -43,19 +43,20 @@
         </section>
         <section id="installation">
             <h2>Installation</h2>
-            <p>Choose one of the options below to get your location's coordinates for installation:</p>
             <button class="btn" id="gpsBtn">Use GPS Location</button>
-            <button class="btn" id="manualBtn">Enter Coordinates Manually</button>
-            <div id="coordinateInput" style="display:none; margin-top:1rem;">
-                <label for="country">Country:</label>
-                <input type="text" id="country" placeholder="Enter your country"><br><br>
-                <label for="state">State:</label>
-                <input type="text" id="state" placeholder="Enter your state"><br><br>
-                <label for="district">District:</label>
-                <input type="text" id="district" placeholder="Enter your district"><br><br>
-                <button class="btn" id="calculateBtn">Calculate Position</button>
-            </div>
+            <form id="userDetailsForm" style="margin-top: 1rem;">
+                <input type="hidden" id="latitude">
+                <input type="hidden" id="longitude">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required><br><br>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" placeholder="Enter your phone number" required><br><br>
+                <label for="address">Address:</label>
+                <textarea id="address" placeholder="Enter your address" required></textarea><br><br>
+                <button type="submit" class="btn">Submit</button>
+            </form>
         </section>
+        
         <section id="impact">
             <h2>Impact and Benefits</h2>
             <div class="card">
